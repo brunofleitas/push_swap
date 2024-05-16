@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   2-compute_string.c                                 :+:      :+:    :+:   */
+/*   2_compute_string.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bfleitas <bfleitas@student.42luxembourg    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/01 20:21:40 by bfleitas          #+#    #+#             */
-/*   Updated: 2024/05/15 15:11:07 by bfleitas         ###   ########.fr       */
+/*   Updated: 2024/05/16 17:20:45 by bfleitas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,19 +84,19 @@ int	ft_atoi_str(const char *nptr, int *i)
     4. Returns `ALL_GOOD` if the number was successfully added to the stacks, 
 	otherwise `WRONG_INPUT`.
 */
-int	process_input_stack_str(char *argv, int i, t_list **top_of_stack,
+int	process_input_stack_str(char *argv, int *i, t_list **top_of_stack,
 		t_list **end_of_stack)
 {
 	int	nbr;
 
-	while (argv[i] != 0 && ((argv[i] == ' ') || (argv[i] >= 9
-				&& argv[i] <= 13)))
-		i++;
-	if (argv[i] == '0' && argv[i++ + 1] == ' ')
+	while (argv[*i] != 0 && ((argv[*i] == ' ') || (argv[*i] >= 9
+				&& argv[*i] <= 13)))
+		(*i)++;
+	if (argv[*i] == '0' && argv[(*i)++ + 1] == ' ')
 		nbr = 0;
 	else
 	{
-		nbr = ft_atoi_str(argv, &i);
+		nbr = ft_atoi_str(argv, i);
 		if (nbr == 0)
 			return (WRONG_INPUT);
 	}
@@ -146,7 +146,7 @@ int	create_structure_str(char *argv, t_list **top_of_stack,
 	i = 0;
 	while (i != ft_strlen(argv))
 	{
-		error = process_input_stack_str(argv, i, top_of_stack, end_of_stack);
+		error = process_input_stack_str(argv, &i, top_of_stack, end_of_stack);
 		if (error)
 			return (WRONG_INPUT);
 	}
