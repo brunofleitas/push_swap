@@ -6,7 +6,7 @@
 /*   By: bfleitas <bfleitas@student.42luxembourg    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/18 11:45:05 by bfleitas          #+#    #+#             */
-/*   Updated: 2024/05/16 17:14:17 by bfleitas         ###   ########.fr       */
+/*   Updated: 2024/05/16 23:35:50 by bfleitas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -190,15 +190,24 @@ void				sort_three_stack(t_list **top_stack_a,
 /* CHECKER.C                                                                  */
 /* ************************************************************************** */
 
-int		checker(void);
-void	case_argv_more_2_checker(int argc, char **argv);
-void	case_argv_2_checker(char **argv);
-void    checker_algorithm(t_list **top_stack_a, t_list **top_stack_b);
-void    run_operation(char *op, t_list **top_stack_a, t_list **top_stack_b);
-void    run_rot_op(char *op, t_list **top_stack_a, t_list **top_stack_b);
-void    run_rev_rot_op(char *op, t_list **top_stack_a, t_list **top_stack_b);
-void    run_push_op(char *op, t_list **top_stack_a, t_list **top_stack_b);
-void    run_swap_op(char *op, t_list **top_stack_a, t_list **top_stack_b);
-void	ft_listclear(t_list **lst);
+void				case_argv_more_2_checker(int argc, char **argv);
+void				case_argv_2_checker(char **argv);
+void				checker_algorithm(t_list **top_stack_a,
+						t_list **top_stack_b);
+void				run_operation(char *op, t_list **top_stack_a,
+						t_list **end_stack_a, t_list **top_stack_b,
+						t_list **end_stack_b);
+void				run_rot_op(char *op, t_list **top_stack_a,
+						t_list **end_stack_a, t_list **top_stack_b,
+						t_list **end_stack_b);
+void				run_rev_rot_op(char *op, t_list **top_stack_a,
+						t_list **end_stack_a, t_list **top_stack_b,
+						t_list **end_stack_b);
+void				run_push_op(char *op, t_list **top_stack_a,
+						t_list **end_stack_a, t_list **top_stack_b,
+						t_list **end_stack_b);
+void				run_swap_op(char *op, t_list **top_stack_a,
+						t_list **top_stack_b);
+void				ft_listclear(t_list **lst);
 
 #endif

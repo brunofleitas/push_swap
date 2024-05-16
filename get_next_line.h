@@ -6,7 +6,7 @@
 /*   By: bfleitas <bfleitas@student.42luxembourg    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/08 09:52:41 by bfleitas          #+#    #+#             */
-/*   Updated: 2024/05/16 15:42:15 by bfleitas         ###   ########.fr       */
+/*   Updated: 2024/05/16 23:36:56 by bfleitas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@
 # endif
 
 # include <stdlib.h>
+# include <fcntl.h>
 # include <unistd.h>
 
 /*STRUCTURE*/

@@ -6,7 +6,7 @@
 /*   By: bfleitas <bfleitas@student.42luxembourg    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/25 14:12:51 by bfleitas          #+#    #+#             */
-/*   Updated: 2024/05/16 16:31:54 by bfleitas         ###   ########.fr       */
+/*   Updated: 2024/05/16 23:37:40 by bfleitas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -140,7 +140,8 @@ void	case_argv_more_2(int argc, char **argv)
     - If more than one argument is provided, it calls `case_argv_more_2`.
     The return value of 1 indicates successful completion of the 
 	program's logic.
-*//*
+*/
+/*
 int	main(int argc, char **argv)
 {
 	if (argc == 2)
