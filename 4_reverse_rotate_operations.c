@@ -6,7 +6,7 @@
 /*   By: bfleitas <bfleitas@student.42luxembourg    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/14 16:39:32 by bfleitas          #+#    #+#             */
-/*   Updated: 2024/05/17 15:22:15 by bfleitas         ###   ########.fr       */
+/*   Updated: 2024/05/17 15:34:21 by bfleitas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -105,7 +105,6 @@ void	rrb(t_list **top_of_stack_b, t_list **end_of_stack_b)
 		last_element->prev = NULL;
 		*top_of_stack_b = last_element;
 	}
-	write(1, "rrb\n", 4);
 }
 
 /*

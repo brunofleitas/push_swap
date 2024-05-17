@@ -6,7 +6,7 @@
 /*   By: bfleitas <bfleitas@student.42luxembourg    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/25 11:33:59 by bfleitas          #+#    #+#             */
-/*   Updated: 2024/05/17 15:08:51 by bfleitas         ###   ########.fr       */
+/*   Updated: 2024/05/17 15:34:46 by bfleitas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ void	run_sa(t_list **top_of_stack_a)
 void	run_sb(t_list **top_of_stack_b)
 {
 	sb(top_of_stack_b);
-	write(1, "sa\n", 3);
+	write(1, "sb\n", 3);
 }
 
 /*
@@ -88,7 +88,6 @@ void	sb(t_list **top_of_stack_b)
 			next->rank = temp;
 		}
 	}
-	write(1, "sb\n", 3);
 }
 
 /*
