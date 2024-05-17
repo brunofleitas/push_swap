@@ -6,7 +6,7 @@
 /*   By: bfleitas <bfleitas@student.42luxembourg    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/05 01:27:34 by bfleitas          #+#    #+#             */
-/*   Updated: 2024/05/16 15:36:01 by bfleitas         ###   ########.fr       */
+/*   Updated: 2024/05/17 00:23:55 by bfleitas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,9 +29,9 @@
       finding a newline character, the function returns 0, indicating that no
       newline character was found.
 */
-int	has_newline(tlist *list)
+int	has_newline(t_lst *list)
 {
-	tlist	*current_node;
+	t_lst	*current_node;
 	char	*buffer_ptr;
 
 	current_node = list;
@@ -71,9 +71,9 @@ int	has_newline(tlist *list)
       function continues to copy characters until the end of the list is
       reached, and then null-terminates the string.
 */
-void	duplicate_string(tlist *list, char **str)
+void	duplicate_string(t_lst *list, char **str)
 {
-	tlist	*current_node;
+	t_lst	*current_node;
 	char	*buffer_ptr;
 	int		i;
 	int		j;
@@ -118,9 +118,9 @@ void	duplicate_string(tlist *list, char **str)
       newline character, the function returns the total length of the data
       processed so far.
 */
-int	length_until_newline(tlist *list)
+int	length_until_newline(t_lst *list)
 {
-	tlist	*current_node;
+	t_lst	*current_node;
 	int		length;
 	char	*buffer_ptr;
 
@@ -161,10 +161,10 @@ int	length_until_newline(tlist *list)
       'node_to_clean'. This function ensures that all dynamically allocated 
       memory is properly released to prevent memory leaks.
 */
-void	release_memory(tlist **list, tlist *node_to_clean, char *buffer)
+void	release_memory(t_lst **list, t_lst *node_to_clean, char *buffer)
 {
-	tlist	*current_node;
-	tlist	*next_node;
+	t_lst	*current_node;
+	t_lst	*next_node;
 
 	if (list == NULL || node_to_clean == NULL)
 		return ;

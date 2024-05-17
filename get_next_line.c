@@ -6,7 +6,7 @@
 /*   By: bfleitas <bfleitas@student.42luxembourg    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/04 23:43:45 by bfleitas          #+#    #+#             */
-/*   Updated: 2024/05/16 15:35:12 by bfleitas         ###   ########.fr       */
+/*   Updated: 2024/05/17 00:39:17 by bfleitas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,10 +25,10 @@
       character in the last node's buffer. If memory allocation fails for the
       new buffer or node, the function returns without making any changes.
 */
-void	refine_list(tlist **list)
+void	refine_list(t_lst **list)
 {
-	tlist	*last_node;
-	tlist	*node_to_clean;
+	t_lst	*last_node;
+	t_lst	*node_to_clean;
 	int		i;
 	int		buffer_index;
 	char	*buffer;
@@ -37,7 +37,7 @@ void	refine_list(tlist **list)
 	while (last_node != NULL && last_node->next != NULL)
 		last_node = last_node->next;
 	buffer = malloc(BUFFER_SIZE + 1);
-	node_to_clean = malloc(sizeof(tlist));
+	node_to_clean = malloc(sizeof(t_lst));
 	if (buffer == NULL || node_to_clean == NULL)
 		return ;
 	i = 0;
@@ -67,7 +67,7 @@ void	refine_list(tlist **list)
       the new string containing the line. If the list is empty or if memory
       allocation fails, the function returns NULL.
 */
-char	*get_line(tlist *list)
+char	*get_line(t_lst *list)
 {
 	int		line_length;
 	char	*next_line;
@@ -98,13 +98,13 @@ char	*get_line(tlist *list)
       head of the list. Otherwise, the function iterates through the list to
       find the last node and appends the new node to the end.
 */
-void	add_new_node(tlist **list, char *buffer, int fd)
+void	add_new_node(t_lst **list, char *buffer, int fd)
 {
-	tlist	*new_node;
-	tlist	*current_node;
+	t_lst	*new_node;
+	t_lst	*current_node;
 
 	current_node = list[fd];
-	new_node = (tlist *)malloc(sizeof(tlist));
+	new_node = (t_lst *)malloc(sizeof(t_lst));
 	if (new_node == NULL)
 		return ;
 	new_node->buffer = buffer;
@@ -134,7 +134,7 @@ void	add_new_node(tlist **list, char *buffer, int fd)
       data read from the file descriptor. If an error occurs during memory
       allocation or reading, the function frees any allocated memory and return
 */
-void	build_list(tlist **list, int fd)
+void	build_list(t_lst **list, int fd)
 {
 	int		bytes_read;
 	char	*buffer;
@@ -177,7 +177,7 @@ void	build_list(tlist **list, int fd)
 */
 char	*get_next_line(int fd)
 {
-	static tlist	*list[4096];
+	static t_lst	*list[4096];
 	char			*line;
 
 	if (fd < 0 || fd > 4095 || BUFFER_SIZE <= 0)
