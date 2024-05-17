@@ -6,7 +6,7 @@
 #    By: bfleitas <bfleitas@student.42luxembourg    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/05/17 02:39:48 by bfleitas          #+#    #+#              #
-#    Updated: 2024/05/17 02:51:42 by bfleitas         ###   ########.fr        #
+#    Updated: 2024/05/17 03:07:32 by bfleitas         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -27,7 +27,7 @@ SRCS	= 1_main.c \
 		5_find_lower_cost.c 5_main_algorithm_utils.c \
 		5_sorting_three_and_five.c
 
-SRCSB	=  6_checker.c \
+SRCSB	=  6_checker.c 6_checker_utils.c \
 		2_compute_string.c 2_generate_list.c 2_generating_utils.c\
 		3_ranking.c \
 		4_push_operations.c 4_reverse_rotate_operations.c \
@@ -41,18 +41,17 @@ OBJS	= $(SRCS:.c=.o)
 
 OBJSB	= $(SRCSB:.c=.o)
 
-NAME	= push_swap.a
+NAME	= push_swap
+
+BONUS_NAME = checker
 
 all: $(NAME)
 
 $(NAME): $(OBJS)
-	$(LIBC) $(NAME) $(OBJS)
-
-.c.o: 
-	$(CC) $(CFLAGS) -c $< -o  ${<:.c=.o}
+	$(CC) $(CFLAGS) $(OBJS) -o $(NAME)
 
 bonus: $(NAME) $(OBJSB)
-	$(LIBC) $(NAME) $(OBJSB)
+	$(CC) $(CFLAGS) $(OBJSB) -o $(BONUS_NAME)
 
 clean:
 	$(RM) $(OBJS) $(OBJSB)
