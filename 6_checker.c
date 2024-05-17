@@ -6,31 +6,12 @@
 /*   By: bfleitas <bfleitas@student.42luxembourg    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/16 01:42:39 by bfleitas          #+#    #+#             */
-/*   Updated: 2024/05/17 02:31:51 by bfleitas         ###   ########.fr       */
+/*   Updated: 2024/05/17 14:26:29 by bfleitas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "get_next_line.h"
 #include "push_swap.h"
-/*
-#include "1_main.c"
-#include "2_compute_string.c"
-#include "2_generate_list.c"
-#include "2_generating_utils.c"
-#include "3_ranking.c"
-#include "4_push_operations.c"
-#include "4_reverse_rotate_operations.c"
-#include "4_rotate_operations.c"
-#include "4_swap_operations.c"
-#include "5_algorithm.c"
-#include "5_algorithm_utils.c"
-#include "5_calculate_average.c"
-#include "5_find_lower_cost.c"
-#include "5_main_algorithm_utils.c"
-#include "5_sorting_three_and_five.c"
-#include "get_next_line.c"
-#include "get_next_line_utils.c"
-*/
 
 /*
   Parameters:
@@ -158,6 +139,11 @@ void	case_argv_more_2_checker(int argc, char **argv)
 */
 int	main(int argc, char **argv)
 {
+	//int		argc = 2;
+	//char	*argv[] = {"program", "0 9 1 8 2 7 3 6 4 5"};
+	//int fd = open("./fd.txt", O_RDONLY);
+	//if (fd == -1)
+	//	return(1);
 	if (argc == 2)
 		case_argv_2_checker(argv);
 	if (argc > 2)

@@ -6,11 +6,23 @@
 /*   By: bfleitas <bfleitas@student.42luxembourg    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/14 16:38:37 by bfleitas          #+#    #+#             */
-/*   Updated: 2024/05/15 15:54:19 by bfleitas         ###   ########.fr       */
+/*   Updated: 2024/05/17 15:10:52 by bfleitas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+
+void	run_ra(t_list **top_of_stack_a, t_list **end_of_stack_a)
+{
+	ra(top_of_stack_a, end_of_stack_a);
+	write(1, "ra\n", 3);
+}
+
+void	run_rb(t_list **top_of_stack_b, t_list **end_of_stack_b)
+{
+	rb(top_of_stack_b, end_of_stack_b);
+	write(1, "rb\n", 3);
+}
 
 /*
   Parameters:
@@ -39,7 +51,7 @@ void	ra(t_list **top_of_stack_a, t_list **end_of_stack_a)
 {
 	t_list	*first_element;
 
-	if (*top_of_stack_a)
+	if (*top_of_stack_a && (*top_of_stack_a)->next)
 	{
 		first_element = *top_of_stack_a;
 		*top_of_stack_a = first_element->next;
@@ -53,7 +65,6 @@ void	ra(t_list **top_of_stack_a, t_list **end_of_stack_a)
 		(*end_of_stack_a)->next = first_element;
 		*end_of_stack_a = first_element;
 	}
-	write(1, "ra\n", 3);
 }
 
 /*
@@ -84,7 +95,7 @@ void	rb(t_list **top_of_stack_b, t_list **end_of_stack_b)
 {
 	t_list	*first_element;
 
-	if (*top_of_stack_b)
+	if (*top_of_stack_b && (*top_of_stack_b)->next)
 	{
 		first_element = *top_of_stack_b;
 		*top_of_stack_b = first_element->next;
@@ -98,7 +109,6 @@ void	rb(t_list **top_of_stack_b, t_list **end_of_stack_b)
 		(*end_of_stack_b)->next = first_element;
 		*end_of_stack_b = first_element;
 	}
-	write(1, "rb\n", 3);
 }
 
 /*

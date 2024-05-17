@@ -6,7 +6,7 @@
 /*   By: bfleitas <bfleitas@student.42luxembourg    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/18 11:45:05 by bfleitas          #+#    #+#             */
-/*   Updated: 2024/05/17 02:33:58 by bfleitas         ###   ########.fr       */
+/*   Updated: 2024/05/17 15:22:45 by bfleitas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,7 +47,7 @@ void				ft_lstclear(t_list **lst);
 
 /* ************************************************************************** */
 /* 2_GENERATE_LIST.C                                                          */
-/* ************************************************************************** */
+/* *************************************************************************** */
 
 int					create_structure(int argc, char **argv,
 						t_list **top_of_stack, t_list **end_of_stack);
@@ -98,7 +98,9 @@ void				pb(t_list **top_of_stack_a, t_list **end_of_stack_a,
 /* ************************************************************************** */
 
 void				rra(t_list **top_of_stack_a, t_list **end_of_stack_a);
+void				run_rra(t_list **top_of_stack_a, t_list **end_of_stack_a);
 void				rrb(t_list **top_of_stack_b, t_list **end_of_stack_b);
+void				run_rrb(t_list **top_of_stack_b, t_list **end_of_stack_b);
 void				rrr(t_list **top_of_stack_a, t_list **end_of_stack_a,
 						t_list **top_of_stack_b, t_list **end_of_stack_b);
 
@@ -107,7 +109,9 @@ void				rrr(t_list **top_of_stack_a, t_list **end_of_stack_a,
 /* ************************************************************************** */
 
 void				ra(t_list **top_of_stack_a, t_list **end_of_stack_a);
+void				run_ra(t_list **top_of_stack_a, t_list **end_of_stack_a);
 void				rb(t_list **top_of_stack_b, t_list **end_of_stack_b);
+void				run_rb(t_list **top_of_stack_b, t_list **end_of_stack_b);
 void				rr(t_list **top_of_stack_a, t_list **end_of_stack_a,
 						t_list **top_of_stack_b, t_list **end_of_stack_b);
 
@@ -116,7 +120,9 @@ void				rr(t_list **top_of_stack_a, t_list **end_of_stack_a,
 /* ************************************************************************** */
 
 void				sa(t_list **top_of_stack_a);
+void				run_sa(t_list **top_of_stack_a);
 void				sb(t_list **top_of_stack_b);
+void				run_sb(t_list **top_of_stack_b);
 void				ss(t_list **top_of_stack_a, t_list **top_of_stack_b);
 
 /* ************************************************************************** */

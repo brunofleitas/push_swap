@@ -6,11 +6,23 @@
 /*   By: bfleitas <bfleitas@student.42luxembourg    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/25 11:33:59 by bfleitas          #+#    #+#             */
-/*   Updated: 2024/05/15 16:01:13 by bfleitas         ###   ########.fr       */
+/*   Updated: 2024/05/17 15:08:51 by bfleitas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+
+void	run_sa(t_list **top_of_stack_a)
+{
+	sa(top_of_stack_a);
+	write(1, "sa\n", 3);
+}
+
+void	run_sb(t_list **top_of_stack_b)
+{
+	sb(top_of_stack_b);
+	write(1, "sa\n", 3);
+}
 
 /*
   Parameters:
@@ -43,7 +55,6 @@ void	sa(t_list **top_of_stack_a)
 			next->rank = temp;
 		}
 	}
-	write(1, "sa\n", 3);
 }
 
 /*

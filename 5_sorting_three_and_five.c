@@ -6,7 +6,7 @@
 /*   By: bfleitas <bfleitas@student.42luxembourg    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/14 16:35:17 by bfleitas          #+#    #+#             */
-/*   Updated: 2024/05/15 17:08:06 by bfleitas         ###   ########.fr       */
+/*   Updated: 2024/05/17 15:24:15 by bfleitas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,24 +25,24 @@ void	sort_three_stack(t_list **top_stack_a, t_list **end_stack_a)
 {
 	if (((*top_stack_a)->rank == 1) && ((*top_stack_a)->next->rank == 3))
 	{
-		sa(top_stack_a);
-		ra(top_stack_a, end_stack_a);
+		run_sa(top_stack_a);
+		run_ra(top_stack_a, end_stack_a);
 	}
 	else if ((*top_stack_a)->rank == 2)
 	{
 		if ((*top_stack_a)->next->rank == 1)
-			sa(top_stack_a);
+			run_sa(top_stack_a);
 		else
-			rra(top_stack_a, end_stack_a);
+			run_rra(top_stack_a, end_stack_a);
 	}
 	else if ((*top_stack_a)->rank == 3)
 	{
 		if ((*top_stack_a)->next->rank == 1)
-			ra(top_stack_a, end_stack_a);
+			run_ra(top_stack_a, end_stack_a);
 		else
 		{
-			sa(top_stack_a);
-			rra(top_stack_a, end_stack_a);
+			run_sa(top_stack_a);
+			run_rra(top_stack_a, end_stack_a);
 		}
 	}
 }
@@ -70,7 +70,7 @@ void	move_above_average(t_list **top_stack_a, t_list **end_stack_a,
 		if (tmp->rank > average(*top_stack_a))
 			pb(top_stack_a, end_stack_a, top_stack_b, end_stack_b);
 		else
-			ra(top_stack_a, end_stack_a);
+			run_ra(top_stack_a, end_stack_a);
 	}
 }
 
@@ -123,7 +123,7 @@ void	pb_max(t_list **top_stack_a, t_list **end_stack_a, t_list **top_stack_b,
 			while (moves_to_extreme(1, top_stack_a,
 					search_max_value(top_stack_a))
 				&& (*top_stack_a)->rank != search_max_value(top_stack_a))
-				ra(top_stack_a, end_stack_a);
+				run_ra(top_stack_a, end_stack_a);
 			pb(top_stack_a, end_stack_a, top_stack_b, end_stack_b);
 		}
 		else
@@ -131,7 +131,7 @@ void	pb_max(t_list **top_stack_a, t_list **end_stack_a, t_list **top_stack_b,
 			while (moves_to_extreme(0, end_stack_a,
 					search_max_value(top_stack_a))
 				&& (*top_stack_a)->rank != search_max_value(top_stack_a))
-				rra(top_stack_a, end_stack_a);
+				run_rra(top_stack_a, end_stack_a);
 			pb(top_stack_a, end_stack_a, top_stack_b, end_stack_b);
 		}
 	}
@@ -163,11 +163,11 @@ void	sort_five_stack(t_list **top_stack_a, t_list **end_stack_a,
 	if (*top_stack_b)
 	{
 		pa(top_stack_a, end_stack_a, top_stack_b, end_stack_b);
-		ra(top_stack_a, end_stack_a);
+		run_ra(top_stack_a, end_stack_a);
 	}
 	if (*top_stack_b)
 	{
 		pa(top_stack_a, end_stack_a, top_stack_b, end_stack_b);
-		ra(top_stack_a, end_stack_a);
+		run_ra(top_stack_a, end_stack_a);
 	}
 }

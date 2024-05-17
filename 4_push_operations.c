@@ -6,7 +6,7 @@
 /*   By: bfleitas <bfleitas@student.42luxembourg    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/14 16:37:31 by bfleitas          #+#    #+#             */
-/*   Updated: 2024/05/15 15:42:04 by bfleitas         ###   ########.fr       */
+/*   Updated: 2024/05/17 15:06:00 by bfleitas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,7 +57,6 @@ void	pa(t_list **top_of_stack_a, t_list **end_of_stack_a,
 			*end_of_stack_a = element_to_move;
 		*top_of_stack_a = element_to_move;
 	}
-	write(1, "pa\n", 3);
 }
 
 /*

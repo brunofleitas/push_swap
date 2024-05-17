@@ -6,11 +6,27 @@
 /*   By: bfleitas <bfleitas@student.42luxembourg    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/25 14:12:51 by bfleitas          #+#    #+#             */
-/*   Updated: 2024/05/17 02:56:28 by bfleitas         ###   ########.fr       */
+/*   Updated: 2024/05/17 14:28:25 by bfleitas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+/*
+#include "2_compute_string.c"
+#include "2_generate_list.c"
+#include "2_generating_utils.c"
+#include "3_ranking.c"
+#include "4_push_operations.c"
+#include "4_reverse_rotate_operations.c"
+#include "4_rotate_operations.c"
+#include "4_swap_operations.c"
+#include "5_algorithm.c"
+#include "5_algorithm_utils.c"
+#include "5_calculate_average.c"
+#include "5_find_lower_cost.c"
+#include "5_main_algorithm_utils.c"
+#include "5_sorting_three_and_five.c"
+*/
 
 /*
   Parameters:
@@ -125,10 +141,7 @@ void	case_argv_more_2(int argc, char **argv)
 	ft_lstclear(&top_stack_a);
 }
 
-/*
-  Parameters:
-    argc: The count of command-line arguments passed to the program.
-    argv: An array of pointers to null-terminated character strings 
+/*ointers to null-terminated character strings 
 	representing the command-line arguments.
   Return value:
     1: Indicates that the program has completed execution successfully.
@@ -143,9 +156,12 @@ void	case_argv_more_2(int argc, char **argv)
 */
 int	main(int argc, char **argv)
 {
+	//int		argc = 2;
+	//char	*argv[] = {"program", "2 1 0"};
 	if (argc == 2)
 		case_argv_2(argv);
 	if (argc > 2)
 		case_argv_more_2(argc, argv);
 	return (1);
 }
+/**/

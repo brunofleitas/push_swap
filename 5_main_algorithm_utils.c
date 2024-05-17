@@ -6,7 +6,7 @@
 /*   By: bfleitas <bfleitas@student.42luxembourg    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/14 23:12:03 by bfleitas          #+#    #+#             */
-/*   Updated: 2024/05/15 16:58:13 by bfleitas         ###   ########.fr       */
+/*   Updated: 2024/05/17 15:25:59 by bfleitas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,13 +84,13 @@ void	final_rotation(t_list **top_stack_a, t_list **end_stack_a)
 					end_stack_a, search_max_value(top_stack_a)))
 				while (moves_to_extreme(1, top_stack_a,
 						search_max_value(top_stack_a)))
-					ra(top_stack_a, end_stack_a);
+					run_ra(top_stack_a, end_stack_a);
 			else
 				while (((*top_stack_a)->next->rank != 1) && moves_to_extreme(0,
 						end_stack_a, search_max_value(top_stack_a)))
-					rra(top_stack_a, end_stack_a);
+					run_rra(top_stack_a, end_stack_a);
 		}
-		ra(top_stack_a, end_stack_a);
+		run_ra(top_stack_a, end_stack_a);
 	}
 }
 
@@ -109,11 +109,11 @@ void	apply_b_moves(t_list **top_stack_b, t_list **end_stack_b,
 	if (moves_to_nbr(top_stack_b,
 			lower_cost->number) == lower_cost->moves_put_nbr_top)
 		while (moves_to_extreme(1, top_stack_b, lower_cost->number))
-			rb(top_stack_b, end_stack_b);
+			run_rb(top_stack_b, end_stack_b);
 	else
 		while (moves_to_extreme(0, end_stack_b, lower_cost->number)
 			&& (*top_stack_b)->rank != lower_cost->number)
-			rrb(top_stack_b, end_stack_b);
+			run_rrb(top_stack_b, end_stack_b);
 }
 
 /*
@@ -132,9 +132,9 @@ void	apply_a_moves(t_list **top_stack_a, t_list **end_stack_a,
 	if (moves_to_nbr(top_stack_a,
 			lower_cost->best_friend) == lower_cost->moves_put_bf_top)
 		while (moves_to_extreme(1, top_stack_a, lower_cost->best_friend))
-			ra(top_stack_a, end_stack_a);
+			run_ra(top_stack_a, end_stack_a);
 	else
 		while (moves_to_extreme(0, end_stack_a, lower_cost->best_friend)
 			&& (*top_stack_a)->rank != lower_cost->best_friend)
-			rra(top_stack_a, end_stack_a);
+			run_rra(top_stack_a, end_stack_a);
 }

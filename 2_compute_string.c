@@ -6,7 +6,7 @@
 /*   By: bfleitas <bfleitas@student.42luxembourg    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/01 20:21:40 by bfleitas          #+#    #+#             */
-/*   Updated: 2024/05/16 17:20:45 by bfleitas         ###   ########.fr       */
+/*   Updated: 2024/05/17 14:24:11 by bfleitas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -92,7 +92,8 @@ int	process_input_stack_str(char *argv, int *i, t_list **top_of_stack,
 	while (argv[*i] != 0 && ((argv[*i] == ' ') || (argv[*i] >= 9
 				&& argv[*i] <= 13)))
 		(*i)++;
-	if (argv[*i] == '0' && argv[(*i)++ + 1] == ' ')
+	if (argv[*i] == '0' && (argv[(*i) + 1] == ' '
+			|| argv[(*i)++ + 1] == '\0'))
 		nbr = 0;
 	else
 	{
