@@ -6,7 +6,7 @@
 /*   By: bfleitas <bfleitas@student.42luxembourg    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/14 16:35:17 by bfleitas          #+#    #+#             */
-/*   Updated: 2024/05/17 15:24:15 by bfleitas         ###   ########.fr       */
+/*   Updated: 2024/05/17 15:53:27 by bfleitas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,7 +68,7 @@ void	move_above_average(t_list **top_stack_a, t_list **end_stack_a,
 	{
 		tmp = *top_stack_a;
 		if (tmp->rank > average(*top_stack_a))
-			pb(top_stack_a, end_stack_a, top_stack_b, end_stack_b);
+			run_pb(top_stack_a, end_stack_a, top_stack_b, end_stack_b);
 		else
 			run_ra(top_stack_a, end_stack_a);
 	}
@@ -124,7 +124,7 @@ void	pb_max(t_list **top_stack_a, t_list **end_stack_a, t_list **top_stack_b,
 					search_max_value(top_stack_a))
 				&& (*top_stack_a)->rank != search_max_value(top_stack_a))
 				run_ra(top_stack_a, end_stack_a);
-			pb(top_stack_a, end_stack_a, top_stack_b, end_stack_b);
+			run_pb(top_stack_a, end_stack_a, top_stack_b, end_stack_b);
 		}
 		else
 		{
@@ -132,7 +132,7 @@ void	pb_max(t_list **top_stack_a, t_list **end_stack_a, t_list **top_stack_b,
 					search_max_value(top_stack_a))
 				&& (*top_stack_a)->rank != search_max_value(top_stack_a))
 				run_rra(top_stack_a, end_stack_a);
-			pb(top_stack_a, end_stack_a, top_stack_b, end_stack_b);
+			run_pb(top_stack_a, end_stack_a, top_stack_b, end_stack_b);
 		}
 	}
 }
@@ -162,12 +162,12 @@ void	sort_five_stack(t_list **top_stack_a, t_list **end_stack_a,
 	sort_three_stack(top_stack_a, end_stack_a);
 	if (*top_stack_b)
 	{
-		pa(top_stack_a, end_stack_a, top_stack_b, end_stack_b);
+		run_pa(top_stack_a, end_stack_a, top_stack_b, end_stack_b);
 		run_ra(top_stack_a, end_stack_a);
 	}
 	if (*top_stack_b)
 	{
-		pa(top_stack_a, end_stack_a, top_stack_b, end_stack_b);
+		run_pa(top_stack_a, end_stack_a, top_stack_b, end_stack_b);
 		run_ra(top_stack_a, end_stack_a);
 	}
 }

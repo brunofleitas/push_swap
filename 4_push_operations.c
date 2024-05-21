@@ -6,11 +6,25 @@
 /*   By: bfleitas <bfleitas@student.42luxembourg    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/14 16:37:31 by bfleitas          #+#    #+#             */
-/*   Updated: 2024/05/17 15:34:06 by bfleitas         ###   ########.fr       */
+/*   Updated: 2024/05/17 15:52:25 by bfleitas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+
+void	run_pa(t_list **top_of_stack_a, t_list **end_of_stack_a,
+		t_list **top_of_stack_b, t_list **end_of_stack_b)
+{
+	pa(top_of_stack_a, end_of_stack_a, top_of_stack_b, end_of_stack_b);
+	write(1, "pa\n", 3);
+}
+
+void	run_pb(t_list **top_of_stack_a, t_list **end_of_stack_a,
+		t_list **top_of_stack_b, t_list **end_of_stack_b)
+{
+	pb(top_of_stack_a, end_of_stack_a, top_of_stack_b, end_of_stack_b);
+	write(1, "pb\n", 3);
+}
 
 /*
   Parameters:
@@ -57,7 +71,6 @@ void	pa(t_list **top_of_stack_a, t_list **end_of_stack_a,
 			*end_of_stack_a = element_to_move;
 		*top_of_stack_a = element_to_move;
 	}
-	write(1, "pa\n", 3);
 }
 
 /*
@@ -105,5 +118,4 @@ void	pb(t_list **top_of_stack_a, t_list **end_of_stack_a,
 			*end_of_stack_b = element_to_move;
 		*top_of_stack_b = element_to_move;
 	}
-	write(1, "pb\n", 3);
 }

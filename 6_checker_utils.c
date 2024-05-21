@@ -6,7 +6,7 @@
 /*   By: bfleitas <bfleitas@student.42luxembourg    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/17 02:30:19 by bfleitas          #+#    #+#             */
-/*   Updated: 2024/05/17 14:25:10 by bfleitas         ###   ########.fr       */
+/*   Updated: 2024/05/17 16:15:01 by bfleitas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,12 +48,14 @@ void	ft_listclear(t_list **lst)
 */
 void	run_swap_op(char *op, t_list **top_stack_a, t_list **top_stack_b)
 {
-	if (op[1] == 'a')
+	if (op[1] == 'a' && op[2] == '\n')
 		sa(top_stack_a);
-	else if (op[1] == 'b')
+	else if (op[1] == 'b' && op[2] == '\n')
 		sb(top_stack_b);
-	else
+	else if (op[1] == 's' && op[2] == '\n')
 		ss(top_stack_a, top_stack_b);
+	else
+		write(2, "Error\n", 6);
 }
 
 /*
@@ -75,10 +77,12 @@ void	run_push_op(char *op, t_list **top_stack_a, t_list **end_stack_a,
 	if (end_stack_b)
 		while ((end_stack_b)->next != NULL)
 			(end_stack_b) = (end_stack_b)->next;
-	if (op[1] == 'a')
+	if (op[1] == 'a' && op[2] == '\n')
 		pa(top_stack_a, end_stack_a, top_stack_b, &end_stack_b);
-	else if (op[1] == 'b')
+	else if (op[1] == 'b' && op[2] == '\n')
 		pb(top_stack_a, end_stack_a, top_stack_b, &end_stack_b);
+	else
+		write(2, "Error\n", 6);
 }
 
 /*
@@ -102,12 +106,14 @@ void	run_rev_rot_op(char *op, t_list **top_stack_a, t_list **end_stack_a,
 	if (end_stack_b)
 		while ((end_stack_b)->next != NULL)
 			(end_stack_b) = (end_stack_b)->next;
-	if (op[2] == 'a')
+	if (op[2] == 'a' && op[3] == '\n')
 		rra(top_stack_a, end_stack_a);
-	else if (op[2] == 'b')
+	else if (op[2] == 'b' && op[3] == '\n')
 		rrb(top_stack_b, &end_stack_b);
-	else
+	else if (op[2] == 'r' && op[3] == '\n')
 		rrr(top_stack_a, end_stack_a, top_stack_b, &end_stack_b);
+	else
+		write(2, "Error\n", 6);
 }
 
 /*
@@ -129,10 +135,12 @@ void	run_rot_op(char *op, t_list **top_stack_a, t_list **end_stack_a,
 	if (end_stack_b)
 		while ((end_stack_b)->next != NULL)
 			(end_stack_b) = (end_stack_b)->next;
-	if (op[1] == 'a')
+	if (op[1] == 'a' && op[2] == '\n')
 		ra(top_stack_a, end_stack_a);
-	else if (op[1] == 'b')
+	else if (op[1] == 'b' && op[2] == '\n')
 		rb(top_stack_b, &end_stack_b);
-	else
+	else if (op[1] == 'r' && op[2] == '\n')
 		rr(top_stack_a, end_stack_a, top_stack_b, &end_stack_b);
+	else
+		write(2, "Error\n", 6);
 }

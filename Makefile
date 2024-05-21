@@ -6,7 +6,7 @@
 #    By: bfleitas <bfleitas@student.42luxembourg    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/05/17 02:39:48 by bfleitas          #+#    #+#              #
-#    Updated: 2024/05/17 03:07:32 by bfleitas         ###   ########.fr        #
+#    Updated: 2024/05/21 15:04:55 by bfleitas         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -57,7 +57,7 @@ clean:
 	$(RM) $(OBJS) $(OBJSB)
 
 fclean: clean
-	$(RM) $(NAME) $(bonus)
+	$(RM) $(NAME) $(BONUS_NAME)
 
 re: fclean all
 

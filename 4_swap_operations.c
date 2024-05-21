@@ -6,7 +6,7 @@
 /*   By: bfleitas <bfleitas@student.42luxembourg    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/25 11:33:59 by bfleitas          #+#    #+#             */
-/*   Updated: 2024/05/17 15:34:46 by bfleitas         ###   ########.fr       */
+/*   Updated: 2024/05/21 15:00:29 by bfleitas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -106,5 +106,4 @@ void	ss(t_list **top_of_stack_a, t_list **top_of_stack_b)
 {
 	sa(&(*top_of_stack_a));
 	sb(&(*top_of_stack_b));
-	write(1, "ss\n", 3);
 }

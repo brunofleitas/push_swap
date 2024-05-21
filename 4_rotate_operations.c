@@ -6,7 +6,7 @@
 /*   By: bfleitas <bfleitas@student.42luxembourg    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/14 16:38:37 by bfleitas          #+#    #+#             */
-/*   Updated: 2024/05/17 15:10:52 by bfleitas         ###   ########.fr       */
+/*   Updated: 2024/05/21 14:59:55 by bfleitas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -130,5 +130,4 @@ void	rr(t_list **top_of_stack_a, t_list **end_of_stack_a,
 {
 	ra(&(*top_of_stack_a), &(*end_of_stack_a));
 	rb(&(*top_of_stack_b), &(*end_of_stack_b));
-	write(1, "rr\n", 3);
 }

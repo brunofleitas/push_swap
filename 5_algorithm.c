@@ -6,7 +6,7 @@
 /*   By: bfleitas <bfleitas@student.42luxembourg    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/07 14:23:10 by bfleitas          #+#    #+#             */
-/*   Updated: 2024/05/17 15:26:11 by bfleitas         ###   ########.fr       */
+/*   Updated: 2024/05/17 15:54:05 by bfleitas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,7 @@ void	main_algorithm(t_list **top_stack_a, t_list **end_stack_a,
 				end_stack_b);
 		apply_b_moves(top_stack_b, end_stack_b, lower_cost);
 		apply_a_moves(top_stack_a, end_stack_a, lower_cost);
-		pa(top_stack_a, end_stack_a, top_stack_b, end_stack_b);
+		run_pa(top_stack_a, end_stack_a, top_stack_b, end_stack_b);
 		free(lower_cost);
 	}
 	final_rotation(top_stack_a, end_stack_a);

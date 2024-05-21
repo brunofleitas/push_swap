@@ -6,7 +6,7 @@
 /*   By: bfleitas <bfleitas@student.42luxembourg    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/16 01:42:39 by bfleitas          #+#    #+#             */
-/*   Updated: 2024/05/17 14:26:29 by bfleitas         ###   ########.fr       */
+/*   Updated: 2024/05/21 15:09:15 by bfleitas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,10 +31,13 @@ void	run_operation(char *op, t_list **top_stack_a, t_list **end_stack_a,
 		run_swap_op(op, top_stack_a, top_stack_b);
 	else if (op[0] == 'p')
 		run_push_op(op, top_stack_a, end_stack_a, top_stack_b);
-	else if ((op[0] == 'r') && (op[1] == 'r') && (op[2] != '\n'))
+	else if ((op[0] == 'r') && (op[1] == 'r') && (op[3] != '\0'))
 		run_rev_rot_op(op, top_stack_a, end_stack_a, top_stack_b);
-	else if ((op[0] == 'r') && (op[1] == 'a' || op[1] == 'b' || op[1] == 'r'))
+	else if ((op[0] == 'r') && (op[1] == 'a' || op[1] == 'b'
+			|| (op[1] == 'r' && op[3] == '\0')))
 		run_rot_op(op, top_stack_a, end_stack_a, top_stack_b);
+	else
+		write(2, "Error\n", 6);
 }
 
 /*
@@ -139,11 +142,6 @@ void	case_argv_more_2_checker(int argc, char **argv)
 */
 int	main(int argc, char **argv)
 {
-	//int		argc = 2;
-	//char	*argv[] = {"program", "0 9 1 8 2 7 3 6 4 5"};
-	//int fd = open("./fd.txt", O_RDONLY);
-	//if (fd == -1)
-	//	return(1);
 	if (argc == 2)
 		case_argv_2_checker(argv);
 	if (argc > 2)

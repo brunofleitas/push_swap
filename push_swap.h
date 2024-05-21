@@ -6,7 +6,7 @@
 /*   By: bfleitas <bfleitas@student.42luxembourg    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/18 11:45:05 by bfleitas          #+#    #+#             */
-/*   Updated: 2024/05/17 15:22:45 by bfleitas         ###   ########.fr       */
+/*   Updated: 2024/05/21 15:06:49 by bfleitas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,7 +47,7 @@ void				ft_lstclear(t_list **lst);
 
 /* ************************************************************************** */
 /* 2_GENERATE_LIST.C                                                          */
-/* *************************************************************************** */
+/* ************************************************************************** */
 
 int					create_structure(int argc, char **argv,
 						t_list **top_of_stack, t_list **end_of_stack);
@@ -88,7 +88,11 @@ int					all_ranks_filled(t_list *top_of_stack);
 /* 4_PUSH_OPERATIONS.C                                                        */
 /* ************************************************************************** */
 
+void				run_pa(t_list **top_of_stack_a, t_list **end_of_stack_a,
+						t_list **top_of_stack_b, t_list **end_of_stack_b);
 void				pa(t_list **top_of_stack_a, t_list **end_of_stack_a,
+						t_list **top_of_stack_b, t_list **end_of_stack_b);
+void				run_pb(t_list **top_of_stack_a, t_list **end_of_stack_a,
 						t_list **top_of_stack_b, t_list **end_of_stack_b);
 void				pb(t_list **top_of_stack_a, t_list **end_of_stack_a,
 						t_list **top_of_stack_b, t_list **end_of_stack_b);
@@ -124,6 +128,16 @@ void				run_sa(t_list **top_of_stack_a);
 void				sb(t_list **top_of_stack_b);
 void				run_sb(t_list **top_of_stack_b);
 void				ss(t_list **top_of_stack_a, t_list **top_of_stack_b);
+
+/* ************************************************************************** */
+/* 4_OPERATIONS_EXTRA.C                                                       */
+/* ************************************************************************** */
+
+void				run_rrr(t_list **top_of_stack_a, t_list **end_of_stack_a,
+						t_list **top_of_stack_b, t_list **end_of_stack_b);
+void				run_rr(t_list **top_of_stack_a, t_list **end_of_stack_a,
+						t_list **top_of_stack_b, t_list **end_of_stack_b);
+void				run_ss(t_list **top_of_stack_a, t_list **top_of_stack_b);
 
 /* ************************************************************************** */
 /* 5_ALGORITHM_UTILS.C                                                        */
